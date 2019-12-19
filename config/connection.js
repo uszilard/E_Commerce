@@ -9,11 +9,11 @@ var connection = mysql.createConnection({
   port: 3306,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  database: "cat_db"
+  database: "product_db"
 });
 
 // Make connection.
-connection.connect(function (err) {
+connection.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
