@@ -73,7 +73,7 @@ router.get("/products", function (req, res) {
 
 router.post("/api/products", function (req, res) {
     product.create([
-        "name", "sleepy"
+        "name", ""
     ], [
         req.body.name, req.body.sleepy
     ], function (result) {
