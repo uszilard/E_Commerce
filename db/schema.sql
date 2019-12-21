@@ -24,8 +24,8 @@ Version 2.0
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE DATABASE product_db;
-USE product_db;
+CREATE DATABASE ecommerce_db;
+USE ecommerce_db;
 
 DROP TABLE IF EXISTS `products`;
 
