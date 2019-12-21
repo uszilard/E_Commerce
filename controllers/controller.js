@@ -11,23 +11,26 @@ var products = [{
         quantity: 78,
         category: "fruits",
         description: "banana is the best fruit that Dragos likes",
-        imgUrl: ""
+        imgUrl: "",
+        productId: 1
     },
     {
-        name: "banana",
+        name: "apple",
         price: 15,
         quantity: 78,
         category: "fruits",
         description: "banana is the best fruit that Dragos likes",
-        imgUrl: ""
+        imgUrl: "",
+        productId: 2
     },
     {
-        name: "banana",
+        name: "strawberies",
         price: 15,
         quantity: 78,
         category: "fruits",
         description: "banana is the best fruit that Dragos likes",
-        imgUrl: ""
+        imgUrl: "",
+        productId: 3
     }
 ];
 
@@ -46,6 +49,14 @@ var product = {
     },
 
 };
+// Create all our routes and set up logic within those routes where required.
+router.get("/", function (req, res) {
+    product.all(function () {
+
+        res.render("index");
+    });
+});
+
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/products", function (req, res) {
@@ -59,16 +70,6 @@ router.get("/products", function (req, res) {
     });
 });
 
-// Create all our routes and set up logic within those routes where required.
-router.get("/", function (req, res) {
-    product.all(function (data) {
-        var hbsObject = {
-            products: data
-        };
-        console.log(hbsObject);
-        res.render("index", hbsObject);
-    });
-});
 
 router.post("/api/products", function (req, res) {
     product.create([
