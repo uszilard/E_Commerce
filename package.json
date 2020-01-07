@@ -4,7 +4,7 @@
   "description": "online shopping for watches and caffee",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "lint": "eslint **/*.js --quiet",
     "lint-fix": "eslint **/*.js --fix",
     "test": "npm run lint"
@@ -19,6 +19,7 @@
     "prettier": "^1.19.1"
   },
   "devDependencies": {
-    "handlebars-helper-css": "^0.1.0"
+    "handlebars-helper-css": "^0.1.0",
+    "nodemon": "^2.0.2"
   }
 }
