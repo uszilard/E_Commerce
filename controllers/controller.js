@@ -1,36 +1,36 @@
 var express = require("express");
-var orm = require("orm");
+var orm = require("../config/orm");
 
 var router = express.Router();
 
 
 var products = [{
-        name: "banana",
-        price: 15,
-        quantity: 78,
-        category: "fruits",
-        description: "banana is the best fruit that Dragos likes",
-        imgUrl: "",
-        productId: 1
-    },
-    {
-        name: "apple",
-        price: 15,
-        quantity: 78,
-        category: "fruits",
-        description: "banana is the best fruit that Dragos likes",
-        imgUrl: "",
-        productId: 2
-    },
-    {
-        name: "strawberies",
-        price: 15,
-        quantity: 78,
-        category: "fruits",
-        description: "banana is the best fruit that Dragos likes",
-        imgUrl: "",
-        productId: 3
-    }
+    name: "banana",
+    price: 15,
+    quantity: 78,
+    category: "fruits",
+    description: "banana is the best fruit that Dragos likes",
+    imgUrl: "",
+    productId: 1
+},
+{
+    name: "apple",
+    price: 15,
+    quantity: 78,
+    category: "fruits",
+    description: "banana is the best fruit that Dragos likes",
+    imgUrl: "",
+    productId: 2
+},
+{
+    name: "strawberies",
+    price: 15,
+    quantity: 78,
+    category: "fruits",
+    description: "banana is the best fruit that Dragos likes",
+    imgUrl: "",
+    productId: 3
+}
 ];
 
 // Create all our routes and set up logic within those routes where required.
