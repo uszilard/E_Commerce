@@ -9,83 +9,47 @@ DROP TABLE IF EXISTS orders;
 
 DROP TABLE IF EXISTS orderdetails;
 
-CREATE TABLE customers
-(
-    customerID INT(10) NOT NULL
-    AUTO_INCREMENT,
-  customerName varchar
-    (50) NOT NULL,
-  contactLastName varchar
-    (50) NOT NULL,
-  contactFirstName varchar
-    (50) NOT NULL,
-  phone varchar
-    (50) NOT NULL,
-  addressLine1 varchar
-    (50) NOT NULL,
-  addressLine2 varchar
-    (50) DEFAULT NULL,
-  city varchar
-    (50) NOT NULL,
-  state varchar
-    (50) DEFAULT NULL,
-  postalCode varchar
-    (15) DEFAULT NULL,
-  country varchar
-    (50) NOT NULL,
-  PRIMARY KEY
-    (customerID)
+CREATE TABLE customers (
+    customerID INT(10) NOT NULL AUTO_INCREMENT,
+    customerName VARCHAR(50) NOT NULL,
+    contactLastName VARCHAR(50) NOT NULL,
+    contactFirstName VARCHAR(50) NOT NULL,
+    phone VARCHAR(50) NOT NULL,
+    addressLine1 VARCHAR(50) NOT NULL,
+    addressLine2 VARCHAR(50) DEFAULT NULL,
+    city VARCHAR(50) NOT NULL,
+    state VARCHAR(50) DEFAULT NULL,
+    postalCode VARCHAR(15) DEFAULT NULL,
+    country VARCHAR(50) NOT NULL,
+    PRIMARY KEY (customerID)
+);
+
+CREATE TABLE products (
+    productID int NOT NULL AUTO_INCREMENT,
+    productName VARCHAR(70) NOT NULL,
+    productCategory VARCHAR(50) NOT NULL,
+    productDescription TEXT NOT NULL,
+    quantityInStock SMALLINT(6) NOT NULL,
+    price DECIMAL(10 , 2 ) NOT NULL,
+    PRIMARY KEY (productID)
 );
 
 
-    CREATE TABLE orders
-    (
-        orderID int(11) NOT NULL
-        AUTO_INCREMENT,
-  orderDate date NOT NULL,
-  shippedDate date DEFAULT NULL,
-  comments text,
-  customerID int
-        (11) NOT NULL,
-  PRIMARY KEY
-        (orderID),
-  KEY customerID
-        (customerID),
-  FOREIGN KEY
-        (customerID) REFERENCES customers
-        (customerID)
-  
+CREATE TABLE orders (
+    orderID INT(11) NOT NULL AUTO_INCREMENT,
+    orderDate DATE NOT NULL,
+    shippedDate DATE DEFAULT NULL,
+    comments TEXT,
+    customerID INT(11) NOT NULL,
+    PRIMARY KEY (orderID)
 );
 
-        CREATE TABLE products
-        (
-            productCode varchar(15) NOT NULL
-            AUTO_INCREMENT,
-  productName varchar
-            (70) NOT NULL,
-  productCategory varchar
-            (50) NOT NULL,
-  productDescription text NOT NULL,
-  quantityInStock smallint
-            (6) NOT NULL,
-  price decimal
-            (10,2) NOT NULL,
-  PRIMARY KEY
-            (productCode),
-  KEY productCategory
-            (productCategory),
-  FOREIGN KEY
-            (productCode) REFERENCES orderdetails
-            (productCode)
-) ;
-
-            CREATE TABLE orderdetails
-            (
-                orderID int(11) NOT NULL,
-                productCode varchar(15) NOT NULL,
-                quantityOrdered int(11) NOT NULL,
-                priceEach decimal(10,2) NOT NULL,
-                PRIMARY KEY (orderID,productCode),
-                KEY productCode
-                (productCode)
+CREATE TABLE orderdetails (
+    orderID INT(11) NOT NULL,
+    productID int NOT NULL,
+    quantityOrdered INT(11) NOT NULL,
+    priceEach DECIMAL(10 , 2 ) NOT NULL
 );
+
+
+
