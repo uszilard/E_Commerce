@@ -6,32 +6,32 @@ var router = express.Router();
 // var cat = require("../models/cat.js");
 
 var products = [{
-        name: "banana",
-        price: 15,
-        quantity: 78,
-        category: "fruits",
-        description: "banana is the best fruit that Dragos likes",
-        imgUrl: "",
-        productId: 1
-    },
-    {
-        name: "apple",
-        price: 15,
-        quantity: 78,
-        category: "fruits",
-        description: "banana is the best fruit that Dragos likes",
-        imgUrl: "",
-        productId: 2
-    },
-    {
-        name: "strawberies",
-        price: 15,
-        quantity: 78,
-        category: "fruits",
-        description: "banana is the best fruit that Dragos likes",
-        imgUrl: "",
-        productId: 3
-    }
+    name: "banana",
+    price: 15,
+    quantity: 78,
+    category: "fruits",
+    description: "banana is the best fruit that Dragos likes",
+    imgUrl: "",
+    productId: 1
+},
+{
+    name: "apple",
+    price: 15,
+    quantity: 78,
+    category: "fruits",
+    description: "banana is the best fruit that Dragos likes",
+    imgUrl: "",
+    productId: 2
+},
+{
+    name: "strawberies",
+    price: 15,
+    quantity: 78,
+    category: "fruits",
+    description: "banana is the best fruit that Dragos likes",
+    imgUrl: "",
+    productId: 3
+}
 ];
 
 var product = {
@@ -66,7 +66,7 @@ router.get("/products", function (req, res) {
             products: products
         };
 
-        res.render("products", hbsObject);
+        res.render("allproducts", hbsObject);
     });
 });
 
