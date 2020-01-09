@@ -40,6 +40,7 @@ function objToSql(ob) {
 }
 
 // Object for all our SQL statement functions.
+
 var orm = {
     all: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
@@ -103,5 +104,7 @@ var orm = {
     }
 };
 
+
 // Export the orm object for the model (product.js).
 module.exports = orm;
+
