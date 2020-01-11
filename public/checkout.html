@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+
+<body>
+    <div class="ui top fixed menu">
+        <div class="item">
+            <img src="/images/logo.png">
+        </div>
+        <div class="right menu">
+            <a class="item">Home</a>
+            <a class="item">Products</a>
+            <a class="item">Blog</a>
+            <a class="item">About Us</a>
+
+            <a class="item">
+                <i class="large shopping cart icon"></i></a>
+        </div>
+    </div>
+    <div class="ui container marinasclass">
+        <div>
+            <h2>Check Out</h2>
+        </div>
+
+        <div class="ui segmentsn">
+            <div class="ui segment">
+                <h3>Product name {{Product Name}}</h3>
+            </div>
+            <div class="ui secondary segment">
+                <img src="assets/img/image.png" class="ui medium image left floated">
+
+                <p>Ut imperdiet dignissim feugiat. Phasellus tristique odio eu justo dapibus, nec rutrum ipsum
+                    luctus. Ut posuere nec tortor eu ullamcorper. Etiam pellentesque tincidunt tortor, non
+                    sagittis
+                    nibh pretium sit amet. Sed neque dolor, blandit eu ornare vel, lacinia porttitor nisi.
+                    Vestibulum sit amet diam rhoncus, consectetur enim sit amet, interdum mauris. Praesent
+                    feugiat
+                    finibus quam, porttitor varius est egestas id.</p>
+
+                <h4>Price: {{Price}}</h4>
+                <h4>Quantity: {{Quantity}}</h4>
+                <br>
+                <br>
+            </div>
+        </div>
+        <br>
+
+
+        <div class="ui segment">
+            <h4>Total Order: {{Order Amount}}</h4>
+        </div>
+        <div class="ui segment">
+            <h4>Payment method: </h4><i class="cc paypal icon"></i>
+            <i class="credit card icon"></i>
+            <i class="cc visa icon"></i>
+            <i class="cc mastercard icon"></i>
+            <i class="cc amex icon"></i>
+        </div>
+    </div>
+</body>
+
+</html>
