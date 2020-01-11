@@ -30,3 +30,5 @@ insert  into orderdetails (orderID,productID,quantityOrdered,priceEach) values
 (10100,'182248',50,'55.09'),
 
 (10100,'184409',22,'75.46');
+
+SELECT productID FROM products WHERE productID

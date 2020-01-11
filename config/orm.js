@@ -51,6 +51,16 @@ var orm = {
             cb(result);
         });
     },
+    selectByCol: function (table, colName, colVal, cb) {
+        var queryString = "SELECT * FROM ?? WHERE ?? = ?"
+        connection.query(queryString, [table, colName, colVal], function (err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        })
+
+    },
     create: function (table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
 
