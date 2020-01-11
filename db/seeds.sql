@@ -1,4 +1,4 @@
-insert  into customers (customerID,customerName,contactLastName,contactFirstName,phone,addressLine1,addressLine2,city,state,postalCode,country) values 
+insert  into customers (customerID,contactLastName,contactFirstName,phone,addressLine1,addressLine2,city,state,postalCode,country) values 
 
 (103,'Atelier graphique','Schmitt','Carine ','40.32.2555','54, rue Royale',NULL,'Nantes',NULL,'44000','France'),
 

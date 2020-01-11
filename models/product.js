@@ -3,8 +3,8 @@ var orm = require("../config/orm.js");
 
 var product = {
     all: function (cb) {
-        orm.all("products", function (res) {
-            cb(res);
+        orm.all("products", function (products) {
+            cb(products);
         });
     },
     // The variables cols and vals are arrays.

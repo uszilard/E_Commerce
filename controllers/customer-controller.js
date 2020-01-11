@@ -1,5 +1,5 @@
 var express = require("express");
-var product = require("../models/product")
+var product = require("../models/customers")
 var router = express.Router();
 
 
@@ -12,7 +12,7 @@ router.get("/", function (req, res) {
 });
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/products", function (req, res) {
+router.get("/checkout", function (req, res) {
     product.all(function (data) {
         console.log(data + "I am working")
         var hbsObject = {
@@ -24,12 +24,12 @@ router.get("/products", function (req, res) {
 });
 
 
-router.post("/api/products", function (req, res) {
+router.post("/api/checkout", function (req, res) {
     console.log(req.body)
     product.create([
-        "productName", "productCategory", "productDescription", "quantityInStock", "price"
+        "contactLastName", "contactFirstName", "phone", "addressLine1", "addressLine2", "city,state", "postalCode", "country"
     ], [
-        req.body.productName, req.body.productCategory, req.body.productDescription, req.body.quantityInStock, req.body.price
+        req.body.contactLastName, req.body.contactFirstName, req.body.phone, req.body.addressLine1, req.body.addressLine2, req.body.city, req.body.state, req.body.postalCode, req.body.country
     ], function (result) {
         // Send back the ID of the new quote
         console.log(result)
@@ -39,7 +39,7 @@ router.post("/api/products", function (req, res) {
     });
 });
 
-router.put("/api/products/:id", function (req, res) {
+router.put("/api/checkout/:id", function (req, res) {
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);
@@ -56,12 +56,12 @@ router.put("/api/products/:id", function (req, res) {
     });
 });
 
-router.delete("/api/products/:id", function (req, res) {
+router.delete("/api/checkout/:id", function (req, res) {
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);
 
-    product.delete("products", condition, function (result) {
+    product.delete("checkout", condition, function (result) {
         console.log(result);
         if (result.affectedRows === 0) {
             // If no rows were changed, then the ID must not exist, so 404
