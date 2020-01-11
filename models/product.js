@@ -3,9 +3,19 @@ var orm = require("../config/orm.js");
 
 var product = {
     all: function (cb) {
-        orm.all("products", function (res) {
-            cb(res);
+        orm.all("products", function (products) {
+            cb(products);
         });
+    },
+    selectByCol: function (colName, colVal, cb) {
+        orm.selectByCol(
+            "products",
+            colName,
+            colVal,
+            function (prods) {
+                cb(prods)
+            }
+        );
     },
     // The variables cols and vals are arrays.
     create: function (cols, vals, cb) {
