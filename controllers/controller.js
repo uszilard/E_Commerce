@@ -1,53 +1,22 @@
 var express = require("express");
-var orm = require("../config/orm");
-
+var product = require("../models/product")
 var router = express.Router();
 
 
-var products = [{
-    name: "banana",
-    price: 15,
-    quantity: 78,
-    category: "fruits",
-    description: "banana is the best fruit that Dragos likes",
-    imgUrl: "",
-    productId: 1
-},
-{
-    name: "apple",
-    price: 15,
-    quantity: 78,
-    category: "fruits",
-    description: "banana is the best fruit that Dragos likes",
-    imgUrl: "",
-    productId: 2
-},
-{
-    name: "strawberies",
-    price: 15,
-    quantity: 78,
-    category: "fruits",
-    description: "banana is the best fruit that Dragos likes",
-    imgUrl: "",
-    productId: 3
-}
-];
-
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
-    orm.all(function () {
+    product.all(function () {
 
         res.render("index");
     });
 });
 
-
 // Create all our routes and set up logic within those routes where required.
 router.get("/products", function (req, res) {
-    orm.all(function () {
-        console.log("I am working")
+    product.all(function (data) {
+        console.log(data + "I am working")
         var hbsObject = {
-            products: products
+            products: data
         };
 
         res.render("allproducts", hbsObject);
@@ -56,10 +25,10 @@ router.get("/products", function (req, res) {
 
 
 router.post("/api/products", function (req, res) {
-    orm.create([
-        "name", ""
+    product.create([
+        "products", "customerName,contactLastName,contactFirstName,phone,addressLine1,addressLine2,city,state,postalCode,country"
     ], [
-        req.body.name, req.body.sleepy
+        req.body.products,
     ], function (result) {
         // Send back the ID of the new quote
         res.json({
@@ -73,7 +42,7 @@ router.put("/api/products/:id", function (req, res) {
 
     console.log("condition", condition);
 
-    orm.update({
+    product.update({
         sleepy: req.body.sleepy
     }, condition, function (result) {
         if (result.changedRows === 0) {
@@ -90,7 +59,7 @@ router.delete("/api/products/:id", function (req, res) {
 
     console.log("condition", condition);
 
-    orm.delete("cats", condition, function (result) {
+    product.delete("cats", condition, function (result) {
         console.log(result);
         if (result.affectedRows === 0) {
             // If no rows were changed, then the ID must not exist, so 404
