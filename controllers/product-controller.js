@@ -23,7 +23,6 @@ router.get("/products", function (req, res) {
     });
 });
 
-
 router.get("/products/:id", function (request, response) {
 
     product.selectByCol(
@@ -35,7 +34,6 @@ router.get("/products/:id", function (request, response) {
         }
     );
 });
-
 
 router.post("/api/products", function (req, res) {
     console.log(req.body)
@@ -84,8 +82,6 @@ router.delete("/api/products/:id", function (req, res) {
         }
     });
 });
-
-
 
 // Export routes for server.js to use.
 module.exports = router;

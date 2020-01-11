@@ -7,7 +7,6 @@ var product = {
             cb(products);
         });
     },
-
     selectByCol: function (colName, colVal, cb) {
         orm.selectByCol(
             "products",
@@ -18,7 +17,6 @@ var product = {
             }
         );
     },
-
     // The variables cols and vals are arrays.
     create: function (cols, vals, cb) {
         orm.create("products", cols, vals, function (res) {
