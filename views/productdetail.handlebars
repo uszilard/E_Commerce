@@ -18,19 +18,16 @@
             <img src="http://lorempixel.com/400/200" />
         </div>
         <div class="content">
-            <a class="ui header" href="#link">Product Name</a>
+            <a class="ui header" href="#link">{{product.name}}</a>
             <div class="description">
-                <p>Ut imperdiet dignissim feugiat. Phasellus tristique odio eu justo dapibus, nec rutrum ipsum
-                    luctus. Ut posuere nec tortor eu ullamcorper. <a href="#link">Etiam pellentesque</a> tincidunt
-                    tortor, non sagittis nibh pretium sit amet. Sed neque dolor, blandit eu ornare vel, lacinia
-                    porttitor nisi. Vestibulum sit amet diam rhoncus, consectetur enim sit amet, interdum mauris.
-                    Praesent feugiat finibus quam, porttitor varius est egestas id.</p>
+                <p>{{product.description}}</p>
+                <p>{{product.price}}</p>
             </div>
         </div>
     </div>
 </div>
 <div class="ui vertical animated button" tabindex="0">
-    <div class="hidden content">Add to Cart</div>
+    <div class="hidden content">Cart</div>
     <div class="visible content">
         <i class="shop icon"></i>
     </div>
