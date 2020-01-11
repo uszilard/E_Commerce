@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
   host: process.env.DB_HOST,
   port: 3306,
   user: "root",
-  password: "yourRootPassword",
+  password: "Sofiia20?!",
   database: "ecommerce_db"
 });
 

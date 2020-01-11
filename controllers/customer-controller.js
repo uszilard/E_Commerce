@@ -2,6 +2,17 @@ var express = require("express");
 var customer = require("../models/customers")
 var router = express.Router();
 
+router.get("/checkout", function (req, res) {
+    console.log("query for customer was done")
+
+    customer.create(function (customers) {
+        console.log(customers)
+        res.send(result)
+    });
+});
+
+
+
 router.post("/api/checkout", function (req, res) {
     console.log(req.body)
     customer.create([
