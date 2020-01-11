@@ -1,0 +1,125 @@
+<header class="ui top fixed menu">
+    <div class="item">
+        <img src="/images/logo.png">
+    </div>
+    <div class="right menu">
+        <a href="http://localhost:8080/" class="item">Home</a>
+        <a href="http://localhost:8080/products" class="item">Products</a>
+        <a class="item">Blog</a>
+        <a class="item">About Us</a>
+
+        <a href="http://localhost:8080/cart" class="item">
+            <i class="large shopping cart icon"></i></a>
+    </div>
+</header>
+
+<div class="ui container marinasclass">
+    <div>
+        <h2>Check Out</h2>
+    </div>
+
+    <div class="ui segmentsn">
+        <div class="ui segment">
+            <h3>Products list {{in cart Products}}</h3>
+        </div>
+        <div class="ui secondary segment">
+            <img src="assets/img/image.png" class="ui small image left floated">
+            <h4>Product Name: {{Product Name}}</h4>
+            <h4>Price: {{Price}}</h4>
+            <h4>Quantity: {{Quantity}}</h4>
+            <br>
+
+        </div>
+        <div class="ui secondary segment">
+            <img src="assets/img/image.png" class="ui small image left floated">
+            <h4>Product Name: {{Product Name}}</h4>
+            <h4>Price: {{Price}}</h4>
+            <h4>Quantity: {{Quantity}}</h4>
+            <br>
+
+        </div>
+    </div>
+    <br>
+
+
+    <div class="ui left action input">
+        <button class="ui teal labeled icon button">
+            <i class="cart icon"></i>
+            Checkout
+        </button>
+        <input type="text" value="{{Price}}">
+    </div>
+    <div class="ui segment">
+        <h4>Payment method: </h4>
+        <i class="huge cc paypal icon"></i>
+        <i class="huge credit card icon"></i>
+        <i class="huge cc visa icon"></i>
+        <i class="huge cc mastercard icon"></i>
+        <i class="huge cc amex icon"></i>
+    </div>
+    <div class="ui segment">
+        <form class="ui form">
+            <h4 class="ui dividing header">Shipping Information</h4>
+            <div class="field">
+                <label>Name</label>
+                <div class="two fields">
+                    <div class="field">
+                        <input type="text" name={{contactFirstName}} placeholder="First Name">
+                    </div>
+                    <div class="field">
+                        <input type="text" name={{contactLastName}} placeholder="Last Name">
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <label>Shipping Address</label>
+                <div class="fields">
+                    <div class="twelve wide field">
+                        <input type="text" name={{addressLine1}} placeholder="Street Name">
+                    </div>
+                    <div class="four wide field">
+                        <input type="text" name={{addressLine2}} placeholder="Number #">
+                    </div>
+                </div>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <label>State</label>
+                    <input type="text" name={{state}} placeholder="State">
+                </div>
+                <div class="field">
+                    <label>Country</label>
+                    <input type="text" name={{country}} placeholder="Country">
+                </div>
+            </div>
+
+            <div class="two fields">
+                <div class="field">
+                    <label>City</label>
+                    <input type="text" name={{City}} placeholder="city">
+                </div>
+                <div class="field">
+                    <label>Postal Code</label>
+                    <input type="text" name="{{postalCode}}" placeholder="postal Code">
+                </div>
+            </div>
+            <div class="two fields">
+
+                <div class="field">
+                    <label>Phone Number</label>
+                    <input type="text" name="{{phone}}" placeholder="Phone Number">
+                </div>
+            </div>
+    </div>
+
+    <div class="ui button" tabindex="0">Submit Order</div>
+    </form>
+</div>
+
+
+
+
+
+
+
+</div>
