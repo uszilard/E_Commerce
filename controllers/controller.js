@@ -25,12 +25,14 @@ router.get("/products", function (req, res) {
 
 
 router.post("/api/products", function (req, res) {
+    console.log(req.body + "oooooooooooooooooooo")
     product.create([
-        "products", "customerName,contactLastName,contactFirstName,phone,addressLine1,addressLine2,city,state,postalCode,country"
+        "productName", "productCategory", "productDescription", "quantityInStock", "price"
     ], [
-        req.body.products,
+        req.body,
     ], function (result) {
         // Send back the ID of the new quote
+        console.log(res + "postman")
         res.json({
             id: result.insertId
         });
@@ -59,7 +61,7 @@ router.delete("/api/products/:id", function (req, res) {
 
     console.log("condition", condition);
 
-    product.delete("cats", condition, function (result) {
+    product.delete("products", condition, function (result) {
         console.log(result);
         if (result.affectedRows === 0) {
             // If no rows were changed, then the ID must not exist, so 404
@@ -69,6 +71,8 @@ router.delete("/api/products/:id", function (req, res) {
         }
     });
 });
+
+
 
 // Export routes for server.js to use.
 module.exports = router;
