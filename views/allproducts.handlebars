@@ -1,16 +1,18 @@
 <div class="ui very relaxed items">
-    <div class="item">
+
+    {{#each products}}
+
+    <div class="item" data-id={{productID}}>
         <div class="image">
             <img src="http://lorempixel.com/400/200" />
         </div>
         <div class="content">
-            <a class="ui header" href="#link">Product 1</a>
+            <a class="ui header" href="#link">{{productName}}</a>
             <div class="description">
-                <p>Ut imperdiet dignissim feugiat. Phasellus tristique odio eu justo dapibus, nec rutrum ipsum
-                    luctus. Ut posuere nec tortor eu ullamcorper. <a href="#link">Etiam pellentesque</a> tincidunt
-                    tortor, non sagittis nibh pretium sit amet. Sed neque dolor, blandit eu ornare vel, lacinia
-                    porttitor nisi. Vestibulum sit amet diam rhoncus, consectetur enim sit amet, interdum mauris.
-                    Praesent feugiat finibus quam, porttitor varius est egestas id.</p>
+                <p>{{productDescription}}</p>
+                Category: {{productCategory}}<br />
+                QTY: {{quantityInStock}}<br />
+                Price: {{price}}
             </div>
             <div class="ui animated button" tabindex="0">
                 <div class="visible content">View details</div>
@@ -32,72 +34,7 @@
             </div>
         </div>
     </div>
-    <div class="item">
-        <div class="image">
-            <img src="http://lorempixel.com/400/200" />
-        </div>
-        <div class="content">
-            <a class="ui header" href="#link">Product 2</a>
-            <div class="description">
-                <p>Ut imperdiet dignissim feugiat. Phasellus tristique odio eu justo dapibus, nec rutrum ipsum
-                    luctus. Ut posuere nec tortor eu ullamcorper. <a href="#link">Etiam pellentesque</a> tincidunt
-                    tortor, non sagittis nibh pretium sit amet. Sed neque dolor, blandit eu ornare vel, lacinia
-                    porttitor nisi. Vestibulum sit amet diam rhoncus, consectetur enim sit amet, interdum mauris.
-                    Praesent feugiat finibus quam, porttitor varius est egestas id.</p>
-            </div>
-            <div class="ui animated button" tabindex="0">
-                <div class="visible content">View details</div>
-                <div class="hidden content">
-                    <i class="eye icon"></i>
-                </div>
-            </div>
-            <div class="ui animated button" tabindex="0">
-                <div class="visible content">Add to wishlist</div>
-                <div class="hidden content">
-                    <i class="heart icon"></i>
-                </div>
-            </div>
-            <div class="ui vertical animated button" tabindex="0">
-                <div class="hidden content">Add to Cart</div>
-                <div class="visible content">
-                    <i class="shop icon"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="image">
-            <img src="http://lorempixel.com/400/200" />
-        </div>
-        <div class="content">
-            <a class="ui header" href="#link">Product 3</a>
-            <div class="description">
-                <p>Ut imperdiet dignissim feugiat. Phasellus tristique odio eu justo dapibus, nec rutrum ipsum
-                    luctus. Ut posuere nec tortor eu ullamcorper. <a href="#link">Etiam pellentesque</a> tincidunt
-                    tortor, non sagittis nibh pretium sit amet. Sed neque dolor, blandit eu ornare vel, lacinia
-                    porttitor nisi. Vestibulum sit amet diam rhoncus, consectetur enim sit amet, interdum mauris.
-                    Praesent feugiat finibus quam, porttitor varius est egestas id.</p>
-            </div>
-            <div class="ui animated button" tabindex="0">
-                <div class="visible content">View details</div>
-                <div class="hidden content">
-                    <i class="eye icon"></i>
-                </div>
-            </div>
-            <div class="ui animated button" tabindex="0">
-                <div class="visible content">Add to wishlist</div>
-                <div class="hidden content">
-                    <i class="heart icon"></i>
-                </div>
-            </div>
-            <div class="ui vertical animated button" tabindex="0">
-                <div class="hidden content">Add to Cart</div>
-                <div class="visible content">
-                    <i class="shop icon"></i>
-                </div>
-            </div>
-        </div>
-    </div>
+<<<<<<< HEAD
 </div>
 <div class="ui very relaxed items">
     <div class="item">
@@ -124,4 +61,9 @@
     <div class="hidden content">
         <i class="sign-out icon"></i>
     </div>
+=======
+
+    {{/each}}
+
+>>>>>>> 1b2a8e0cd9a59a783cf0d033cd81f5d19edf3417
 </div>

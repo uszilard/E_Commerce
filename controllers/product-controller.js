@@ -13,16 +13,27 @@ router.get("/", function (req, res) {
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/products", function (req, res) {
-    product.all(function (data) {
-        console.log(data + "I am working")
-        var hbsObject = {
-            products: data
-        };
+    console.log("query was done")
 
-        res.render("allproducts", hbsObject);
+    product.all(function (products) {
+        console.log(products)
+        res.render("allproducts", {
+            products: products
+        })
     });
 });
 
+router.get("/products/:id", function (request, response) {
+
+    product.selectByCol(
+        "productId",
+        request.params.id,
+        function (result) {
+            console.log(result)
+            response.send(result)
+        }
+    );
+});
 
 router.post("/api/products", function (req, res) {
     console.log(req.body)
@@ -40,28 +51,28 @@ router.post("/api/products", function (req, res) {
 });
 
 router.put("/api/products/:id", function (req, res) {
-    var condition = "id = " + req.params.id;
+    var condition = "productID = " + req.params.id;
 
     console.log("condition", condition);
 
-    product.update({
-        sleepy: req.body.sleepy
-    }, condition, function (result) {
-        if (result.changedRows === 0) {
-            // If no rows were changed, then the ID must not exist, so 404
-            return res.status(404).end();
-        } else {
-            res.status(200).end();
-        }
-    });
+    product.update(
+        req.body, condition,
+        function (result) {
+            if (result.changedRows === 0) {
+                // If no rows were changed, then the ID must not exist, so 404
+                return res.status(404).end();
+            } else {
+                res.status(200).end();
+            }
+        });
 });
 
 router.delete("/api/products/:id", function (req, res) {
-    var condition = "id = " + req.params.id;
+    var condition = "productID = " + req.params.id;
 
     console.log("condition", condition);
 
-    product.delete("products", condition, function (result) {
+    product.delete(condition, function (result) {
         console.log(result);
         if (result.affectedRows === 0) {
             // If no rows were changed, then the ID must not exist, so 404
@@ -71,8 +82,6 @@ router.delete("/api/products/:id", function (req, res) {
         }
     });
 });
-
-
 
 // Export routes for server.js to use.
 module.exports = router;

@@ -1,4 +1,4 @@
-insert  into customers (customerID,customerName,contactLastName,contactFirstName,phone,addressLine1,addressLine2,city,state,postalCode,country) values 
+insert  into customers (customerID,contactLastName,contactFirstName,phone,addressLine1,addressLine2,city,state,postalCode,country) values 
 
 (103,'Atelier graphique','Schmitt','Carine ','40.32.2555','54, rue Royale',NULL,'Nantes',NULL,'44000','France'),
 
@@ -30,3 +30,5 @@ insert  into orderdetails (orderID,productID,quantityOrdered,priceEach) values
 (10100,'182248',50,'55.09'),
 
 (10100,'184409',22,'75.46');
+
+SELECT productID FROM products WHERE productID
