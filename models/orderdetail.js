@@ -1,3 +1,5 @@
+var orm = require("../config/orm.js");
+
 var orderdetail = {
     all: function (cb) {
         orm.all("orderdetails", function (res) {
