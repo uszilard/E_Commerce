@@ -107,4 +107,3 @@ var orm = {
 
 // Export the orm object for the model (product.js).
 module.exports = orm;
-

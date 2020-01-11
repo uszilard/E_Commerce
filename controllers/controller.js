@@ -25,14 +25,14 @@ router.get("/products", function (req, res) {
 
 
 router.post("/api/products", function (req, res) {
-    console.log(req.body + "oooooooooooooooooooo")
+    console.log(req.body)
     product.create([
         "productName", "productCategory", "productDescription", "quantityInStock", "price"
     ], [
-        req.body,
+        req.body.productName, req.body.productCategory, req.body.productDescription, req.body.quantityInStock, req.body.price
     ], function (result) {
         // Send back the ID of the new quote
-        console.log(res + "postman")
+        console.log(result)
         res.json({
             id: result.insertId
         });
