@@ -1,6 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
-    $("").on("", function (event) {
+    $(".").on("", function (event) {
         var id = $(this).data("id");
         var  = $(this).data("");
 
@@ -9,7 +9,7 @@ $(function () {
         };
 
     // Send the PUT request.
-    $.ajax("/api/products/" + id, {
+    $.ajax("/api/cart/" + id, {
         type: "PUT",
     }).then(
         function () {
@@ -29,27 +29,27 @@ $(".create-form").on("submit", function (event) {
     };
 
     // Send the POST request.
-    $.ajax("/api/products", {
+    $.ajax("/api/cart", {
         type: "POST",
-        data: newProduct
+        data: newOrder
     }).then(
         function () {
-            console.log("created new product");
+            console.log("created new order");
             // Reload the page to get the updated list
             location.reload();
         }
     );
 });
 
-$(".delete-product").on("click", function (event) {
+$(".delete-order").on("click", function (event) {
     var id = $(this).data("id");
 
     // Send the DELETE request.
-    $.ajax("/api/products/" + id, {
+    $.ajax("/api/cart/" + id, {
         type: "DELETE"
     }).then(
         function () {
-            console.log("deleted product", id);
+            console.log("deleted order", id);
             // Reload the page to get the updated list
             location.reload();
         }
