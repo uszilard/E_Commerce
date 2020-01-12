@@ -1,19 +1,7 @@
-<header class="ui top fixed menu">
-    <div class="item">
-        <img src="/images/logo.png">
-    </div>
-    <div class="right menu">
-        <a href="http://localhost:8080/" class="item">Home</a>
-        <a href="http://localhost:8080/products" class="item">Products</a>
-        <a class="item">Blog</a>
-        <a class="item">About Us</a>
-
-        <a href="http://localhost:8080/cart" class="item">
-            <i class="large shopping cart icon"></i></a>
-    </div>
-</header>
-
 <div class="ui container marinasclass">
+
+
+
     <div>
         <h2>Check Out</h2>
     </div>
@@ -57,6 +45,11 @@
         <i class="huge cc mastercard icon"></i>
         <i class="huge cc amex icon"></i>
     </div>
+
+
+    {{#each customers}}
+
+
     <div class="ui segment">
         <form class="ui form">
             <h4 class="ui dividing header">Shipping Information</h4>
@@ -116,10 +109,4 @@
     </form>
 </div>
 
-
-
-
-
-
-
-</div>
+{{/each}}

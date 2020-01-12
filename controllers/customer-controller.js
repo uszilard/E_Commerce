@@ -7,16 +7,16 @@ router.get("/checkout", function (req, res) {
 
     customer.create(function (customers) {
         console.log(customers)
-        res.send(result)
+        res.render("checkout", {
+            customers: customers
+        })
     });
 });
-
-
 
 router.post("/api/checkout", function (req, res) {
     console.log(req.body)
     customer.create([
-        "contactLastName", "contactFirstName", "phone", "addressLine1", "addressLine2", "city,state", "postalCode", "country"
+        "contactLastName", "contactFirstName", "phone", "addressLine1", "addressLine2", "city", "state", "postalCode", "country"
     ], [
         req.body.contactLastName, req.body.contactFirstName, req.body.phone, req.body.addressLine1, req.body.addressLine2, req.body.city, req.body.state, req.body.postalCode, req.body.country
     ], function (result) {
