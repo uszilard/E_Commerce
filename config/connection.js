@@ -7,7 +7,7 @@ dotenv.config();
 var connection = mysql.createConnection({
   host: process.env.DB_HOST,
   port: 3306,
-  user: process.env.DB_USER,
+  user: "root",
   password: process.env.DB_PASS,
   database: "ecommerce_db"
 });
