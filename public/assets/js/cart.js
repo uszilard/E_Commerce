@@ -4,11 +4,17 @@ $(function () {
         event.preventDefault()
         console.log("i am finnalaly doin someting")
         var id = $(this).data("id");
+
         var newOrder = $(this).data("neworder");
 
-        var newOrderState = {
-            order: newOrder
-        };
+        localStorage.setItem(
+            JSON.stringify({
+                key: "id",
+                id
+            })
+        );
+
+
 
         // Send the PUT request.
         $.ajax("/api/cart/" + id, {
