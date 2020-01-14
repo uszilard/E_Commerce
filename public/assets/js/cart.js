@@ -1,6 +1,8 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
-    $(".create-order").on("click", function (event) {
+    $("#add-to-cart").on("click", function (event) {
+        event.preventDefault()
+        console.log("i am finnalaly doin someting")
         var id = $(this).data("id");
         var newOrder = $(this).data("neworder");
 

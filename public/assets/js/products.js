@@ -1,13 +1,13 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
-    $(".change-cart").on("cart", function (event) {
+    $(".change-cart").on("click", function (event) {
         var id = $(this).data("id");
         var newProduct = $(this).data("newproduct");
 
 
 
         // Send the PUT request.
-        $.ajax("/api/products/" + id, {
+        $.ajax("/api/cart" + id, {
             type: "PUT",
         }).then(
             function () {
@@ -17,7 +17,7 @@ $(function () {
         );
     });
 
-    $(".create-form").on("submit", function (event) {
+    $(".create-form").on("click", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
