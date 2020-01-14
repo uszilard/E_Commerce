@@ -1,6 +1,8 @@
 var express = require("express");
-var customer = require("../models/customers")
+var customer = require("../models/customer.js")
 var router = express.Router();
+
+
 
 router.get("/checkout", function (req, res) {
     console.log("query for customer was done")
