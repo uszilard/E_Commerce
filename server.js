@@ -29,6 +29,9 @@ productRoutes(app);
 var customerRoutes = require("./controllers/customer-controller.js")
 customerRoutes(app);
 
+var miscellaneus = require("./controllers/miscellaneus-controller.js")
+miscellaneus(app);
+
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function () {
