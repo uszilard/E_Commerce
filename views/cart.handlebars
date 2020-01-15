@@ -3,9 +3,20 @@
         <h2>Your Cart</h2>
     </div>
 
-    <div class="ui segmentsn">
+    <div id="cartProducts"></div>
+
+
+    <div class="center aligned">
+        <a class="ui huge button">Continue to Check Out</a>
+    </div>
+</div>
+<script>
+    var cart = JSON.parse(localStorage.getItem("cart"));
+    console.log(cart)
+    cart.forEach(product => {
+        $('#cartProducts').append(`<div class="ui segmentsn">
         <div class="ui segment">
-            <h3>Product name {{Product Name}}</h3>
+            <h3>Product name ${product.id}[[ProductName]</h3>
         </div>
         <div class="ui secondary segment">
             <img src="assets/img/image.png" class="ui medium image left floated">
@@ -18,18 +29,17 @@
                 feugiat
                 finibus quam, porttitor varius est egestas id.</p>
 
-            <h4>Price: {{Price}}</h4>
-            <h4>Quantity: {{Quantity}}</h4>
+            <h4>Price: [[Price]]</h4>
+            <h4>Quantity: [[Quantity]]</h4>
+            <div>
+                <a data-id=${product.id} class="ui large button delete-from-cart">Delete from Cart</a>
+            </div>
             <div>
                 <a class="ui large button">Check Out</a>
             </div>
             <br>
         </div>
-    </div>
-    <br>
+    </div>`)
+    })
 
-
-    <div class="center aligned">
-        <a class="ui huge button">Continue to Check Out</a>
-    </div>
-</div>
+</script>

@@ -15,8 +15,16 @@ module.exports = function (app) {
 
         product.all(function (products) {
             console.log(products)
+            var newProducts = products.map(product => {
+                product.productString = JSON.stringify({
+                    id: product.productID,
+                    qty: product.quantityInStock,
+                    price: product.price
+                });
+                return product
+            });
             res.render("allproducts", {
-                products: products
+                products: newProducts
             })
         });
     });
