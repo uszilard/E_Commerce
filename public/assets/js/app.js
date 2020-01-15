@@ -12,9 +12,29 @@ $(function () {
             id
         });
 
-        localStorage.setItem("cart", userAsString);
+        var cart = [];
 
+        var oldCart = {
+            key: "id"
+        };
 
+        cart.push(oldCart);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        var stored = JSON.parse(localStorage.getItem("cart"));
+
+        var newCart = {
+            key: "id"
+        };
+
+        stored.push(newCart);
+
+        localStorage.setItem("cart", JSON.stringify(stored));
+
+        var result = JSON.parse(localStorage.getItem("cart"));
+
+        console.log(result);
 
         // Send the PUT request.
         $.ajax("/api/cart/" + id, {
