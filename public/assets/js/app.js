@@ -33,8 +33,8 @@ $(function () {
         console.log(newArr);
         localStorage.setItem("cart", JSON.stringify(newArr))
 
-    }
-    )
+    })
+
 
     $(".create-form").on("check-out", function (event) {
         // Make sure to preventDefault on a submit event.

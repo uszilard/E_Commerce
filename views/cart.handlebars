@@ -11,10 +11,13 @@
     </div>
 </div>
 <script>
-    var cart = JSON.parse(localStorage.getItem("cart"));
-    console.log(cart)
-    cart.forEach(product => {
-        $('#cartProducts').append(`<div class="ui segmentsn">
+
+    function render() {
+
+        var cart = JSON.parse(localStorage.getItem("cart"));
+        console.log(cart)
+        cart.forEach(product => {
+            $('#cartProducts').append(`<div class="ui segmentsn">
         <div class="ui segment">
             <h3>Product name ${product.id}[[ProductName]</h3>
         </div>
@@ -40,6 +43,30 @@
             <br>
         </div>
     </div>`)
+        })
+
+    }
+
+
+    render();
+
+    $(".delete-from-cart").on("click", function (event) {
+        event.preventDefault()
+        console.log("i am finnalaly doin someting")
+        var id = $(this).data("id");
+        console.log("id", id);
+        var cart = JSON.parse(localStorage.getItem("cart"));
+        console.log(cart)
+
+        var newArr = cart.filter(element => element.id !== id);
+        console.log(newArr);
+        localStorage.setItem("cart", JSON.stringify(newArr))
+
+
+        location.reload();
+
     })
+
+
 
 </script>
