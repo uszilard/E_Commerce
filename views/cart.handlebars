@@ -16,6 +16,7 @@
 
         var cart = JSON.parse(localStorage.getItem("cart"));
         console.log(cart)
+        $('#cartProducts').empty();
         cart.forEach(product => {
             $('#cartProducts').append(`<div class="ui segmentsn">
         <div class="ui segment">
@@ -61,9 +62,8 @@
         var newArr = cart.filter(element => element.id !== id);
         console.log(newArr);
         localStorage.setItem("cart", JSON.stringify(newArr))
+        render()
 
-
-        location.reload();
 
     })
 

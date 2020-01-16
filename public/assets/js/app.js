@@ -21,19 +21,7 @@ $(function () {
         localStorage.setItem("cart", JSON.stringify(cart))
     });
 
-    $(".delete-from-cart").on("click", function (event) {
-        event.preventDefault()
-        console.log("i am finnalaly doin someting")
-        var id = $(this).data("id");
-        console.log("id", id);
-        var cart = JSON.parse(localStorage.getItem("cart"));
-        console.log(cart)
 
-        var newArr = cart.filter(element => element.id !== id);
-        console.log(newArr);
-        localStorage.setItem("cart", JSON.stringify(newArr))
-
-    })
 
 
     $(".create-form").on("check-out", function (event) {
