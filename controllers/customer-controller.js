@@ -2,6 +2,9 @@ var customer = require("../models/customer.js")
 
 
 module.exports = function (app) {
+    app.get("/cart", (request, response) => {
+        response.render("cart")
+    })
 
     app.get("/checkout", function (req, res) {
         console.log("query for customer was done")

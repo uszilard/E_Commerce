@@ -2,8 +2,6 @@ var product = require("../models/order.js")
 
 module.exports = function (app) {
     // Create all our routes and set up logic within those routes where required.
-
-    // Create all our routes and set up logic within those routes where required.
     app.get("/cart", function (req, res) {
         console.log("query was done")
 

@@ -2,50 +2,39 @@
 $(function () {
     $(".add-to-cart").on("click", function (event) {
         event.preventDefault()
+        console.log("i am finnalaly doin someting");
+        //TODO: We need to work with this data attribute instead of creating a new one for each data item
+        console.log($(this).data("stringified"));
+        var id = $(this).data("id");
+        var productToAdd = $(this).data("stringified");
+
+        var cart = JSON.parse(localStorage.getItem("cart"));
+        console.log(cart)
+        if (cart === null) {
+            console.log("hello")
+            cart = [productToAdd];
+        } else {
+            console.log("hi")
+            cart.push(productToAdd);
+
+        };
+        localStorage.setItem("cart", JSON.stringify(cart))
+    });
+
+    $(".delete-from-cart").on("click", function (event) {
+        event.preventDefault()
         console.log("i am finnalaly doin someting")
         var id = $(this).data("id");
+        console.log("id", id);
+        var cart = JSON.parse(localStorage.getItem("cart"));
+        console.log(cart)
 
-        var newOrder = $(this).data("neworder");
+        var newArr = cart.filter(element => element.id !== id);
+        console.log(newArr);
+        localStorage.setItem("cart", JSON.stringify(newArr))
 
-        var userAsString = JSON.stringify({
-            key: "id",
-            id
-        });
-
-        var cart = [];
-
-        var oldCart = {
-            key: "id"
-        };
-
-        cart.push(oldCart);
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        var stored = JSON.parse(localStorage.getItem("cart"));
-
-        var newCart = {
-            key: "id"
-        };
-
-        stored.push(newCart);
-
-        localStorage.setItem("cart", JSON.stringify(stored));
-
-        var result = JSON.parse(localStorage.getItem("cart"));
-
-        console.log(result);
-
-        // Send the PUT request.
-        $.ajax("/api/cart/" + id, {
-            type: "PUT",
-        }).then(
-            function () {
-                // Reload the page to get the updated list
-                location.reload();
-            }
-        );
-    });
+    }
+    )
 
     $(".create-form").on("check-out", function (event) {
         // Make sure to preventDefault on a submit event.
