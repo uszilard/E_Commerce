@@ -11,7 +11,6 @@ DROP TABLE IF EXISTS orderdetails;
 
 CREATE TABLE customers (
     customerID INT(10) NOT NULL AUTO_INCREMENT,
-    customerName VARCHAR(50) NOT NULL,
     contactLastName VARCHAR(50) NOT NULL,
     contactFirstName VARCHAR(50) NOT NULL,
     phone VARCHAR(50) NOT NULL,

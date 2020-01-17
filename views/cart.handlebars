@@ -1,0 +1,72 @@
+<div class="ui container marinasclass">
+    <div>
+        <h2>Your Cart</h2>
+    </div>
+
+    <div id="cartProducts"></div>
+
+
+    <div class="center aligned">
+        <a class="ui huge button">Continue to Check Out</a>
+    </div>
+</div>
+<script>
+
+    function render() {
+
+        var cart = JSON.parse(localStorage.getItem("cart"));
+        console.log(cart)
+        $('#cartProducts').empty();
+        cart.forEach(product => {
+            $('#cartProducts').append(`<div class="ui segmentsn">
+        <div class="ui segment">
+            <h3>Product name ${product.id}[[ProductName]</h3>
+        </div>
+        <div class="ui secondary segment">
+            <img src="assets/img/image.png" class="ui medium image left floated">
+
+            <p>Ut imperdiet dignissim feugiat. Phasellus tristique odio eu justo dapibus, nec rutrum ipsum
+                luctus. Ut posuere nec tortor eu ullamcorper. Etiam pellentesque tincidunt tortor, non
+                sagittis
+                nibh pretium sit amet. Sed neque dolor, blandit eu ornare vel, lacinia porttitor nisi.
+                Vestibulum sit amet diam rhoncus, consectetur enim sit amet, interdum mauris. Praesent
+                feugiat
+                finibus quam, porttitor varius est egestas id.</p>
+
+            <h4>Price: [[Price]]</h4>
+            <h4>Quantity: [[Quantity]]</h4>
+            <div>
+                <a data-id=${product.id} class="ui large button delete-from-cart">Delete from Cart</a>
+            </div>
+            <div>
+                <a class="ui large button">Check Out</a>
+            </div>
+            <br>
+        </div>
+    </div>`)
+        })
+
+    }
+
+
+    render();
+
+    $(".delete-from-cart").on("click", function (event) {
+        event.preventDefault()
+        console.log("i am finnalaly doin someting")
+        var id = $(this).data("id");
+        console.log("id", id);
+        var cart = JSON.parse(localStorage.getItem("cart"));
+        console.log(cart)
+
+        var newArr = cart.filter(element => element.id !== id);
+        console.log(newArr);
+        localStorage.setItem("cart", JSON.stringify(newArr))
+        render()
+
+
+    })
+
+
+
+</script>

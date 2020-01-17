@@ -22,9 +22,16 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/product-controller.js");
 
-app.use(routes);
+var productRoutes = require("./controllers/product-controller.js")
+productRoutes(app);
+
+var customerRoutes = require("./controllers/customer-controller.js")
+customerRoutes(app);
+
+var miscellaneus = require("./controllers/miscellaneus-controller.js")
+miscellaneus(app);
+
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function () {
