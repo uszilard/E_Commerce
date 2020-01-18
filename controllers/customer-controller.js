@@ -1,4 +1,5 @@
-var customer = require("../models/customer.js")
+
+var customer = require("../models/customers.js")
 
 
 module.exports = function (app) {
