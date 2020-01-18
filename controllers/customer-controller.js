@@ -1,9 +1,8 @@
-
 var customer = require("../models/customers.js")
 
 
 module.exports = function (app) {
-    app.get("/cart", (request, response) => {
+    app.get("/cart", function (request, response) {
         response.render("cart")
     })
 
